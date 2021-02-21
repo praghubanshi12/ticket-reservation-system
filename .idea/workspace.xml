@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9540ed89-4060-420d-ae14-dbe3b1d14177" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/trs-ui/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trs-ui/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/trs-ui/tsconfig.app.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/trs-ui" />
+  </component>
+  <component name="ProjectId" id="1ohyuP2LjRy0ovJrwUYU9RjGdGg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TRS-Backend" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9540ed89-4060-420d-ae14-dbe3b1d14177" name="Default Changelist" comment="" />
+      <created>1613753338722</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613753338722</updated>
+      <workItem from="1613753340592" duration="48000" />
+      <workItem from="1613757006467" duration="413000" />
+      <workItem from="1613792043244" duration="601000" />
+      <workItem from="1613792712836" duration="24000" />
+      <workItem from="1613792773146" duration="59000" />
+      <workItem from="1613796553891" duration="66000" />
+      <workItem from="1613805513544" duration="211000" />
+      <workItem from="1613807332823" duration="34000" />
+      <workItem from="1613893378132" duration="47000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1613792558105">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1613792558105" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1613893424560">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1613893424560" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1613796611829">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1613796611829" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1613757284531">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1613757284531" />
+  </component>
+</project>
