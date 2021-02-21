@@ -1,0 +1,23 @@
+<a routerLink="/reservation"><button class="btn btn-primary">Make Reservation</button></a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>From-to</th>
+      <th>Price</th>
+      <th>Departure Time</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{reservation["flightDetails"]["fromAirport"] + "-"  + reservation["flightDetails"]["toAirport"]}}</td>
+      <td>{{reservation["flightDetails"]["price"]}}</td>
+      <td>{{reservation["flightDepartureTime"]["departureTime"]}}</td>
+      <td *ngIf="!reservation['paid']">
+        <button class="btn btn-success" (click)="makePayment(reservation['id'])">Pay</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

@@ -1,0 +1,18 @@
+
+
+<div>
+  <h2>Make Payment :</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Flight : </strong> {{reservation["flightDetails"]["fromAirport"]}} - {{reservation!["flightDetails"]["toAirport"]}} </li>
+        <li class="list-group-item"><strong>Time : </strong> {{reservation["flightDepartureTime"]["departureTime"]}} </li>
+        <li class="list-group-item"><strong>Price : </strong> Rs. {{reservation["flightDetails"]["price"]}} </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-success" (click)="makePayment(reservation['id'])">Pay</button>
+    <button class="btn btn-info" (click)="showReservations()">Pay Later</button>
+  </div>
+</div>
