@@ -9,25 +9,29 @@
     <form class="form-group" [formGroup]="reservationForm" (ngSubmit)="onsubmit()">
       <div class="form-group">
         <select name="" id="from-to" class="form-control" formControlName="flightDetails"
-                (change)="fromToChange($event)">
+                (change)="fromToChange($event)" style="width:40%">
           <option value="">Select source and destination</option>
           <option *ngFor="let flight of flightDetails" [value]="flight['id']">
             {{flight["fromAirport"] + "-" + flight["toAirport"] }}
           </option>
         </select>
+        <div class="error" *ngIf="reservationForm.controls['flightDetails'].hasError('required')">Flight Details is required</div>
       </div>
       <div class="form-group">
-        <label for="departure_time">Date</label>
-        <input type="date" id="departure-date" formControlName="date" class="form-control">
+        <label for="departure-date">Date</label>
+        <input type="date" id="departure-date" formControlName="date" class="form-control" style="width:40%">
+        <div class="error" *ngIf="reservationForm.controls['date'].hasError('required')">Departure date is required</div>
       </div>
       <div class="form-group">
         <label for="departure_time">Departure Time:</label>
-        <select name="" id="departure_time" formControlName="flightDepartureTime" class="form-control">
+        <select name="" id="departure_time" formControlName="flightDepartureTime" class="form-control" style="width:40%">
+          <option value=""> Select a time</option>
           <option *ngFor="let flightDepartureTime of selectedFlight['flightDepartureTimes']"
                   [value]="flightDepartureTime['id']">
             {{flightDepartureTime["departureTime"]}}
           </option>
         </select>
+        <div class="error" *ngIf="reservationForm.controls['flightDepartureTime'].hasError('required')">Departure Time is required</div>
       </div>
       <div class="form-group">
         <label for="departure_time">Total Seats: </label> {{selectedFlight["totalSeats"]}}

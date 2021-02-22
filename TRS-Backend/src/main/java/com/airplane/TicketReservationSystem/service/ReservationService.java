@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -16,6 +17,7 @@ public class ReservationService {
 
     public ResponseEntity<Object> save(Reservation reservation){
         try {
+            reservation.setCreatedDate(new Date());
             reservationRepository.save(reservation);
         } catch (Exception ex) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

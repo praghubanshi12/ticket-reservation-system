@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CustomerService} from "./customer/service/customer.service";
 import { PaymentComponent } from './payment/payment.component';
 import {PaymentService} from "./payment/service/payment.service";
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import {DashboardService} from "./admin-dashboard/service/dashboard.service";
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import {PaymentService} from "./payment/service/payment.service";
     LoginComponent,
     CustomerComponent,
     ReservationComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import {PaymentService} from "./payment/service/payment.service";
     BrowserAnimationsModule
 
   ],
-  providers: [UserService, FlightService, ReservationService, CustomerService, PaymentService],
+  providers: [UserService, FlightService, ReservationService, CustomerService, PaymentService, DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

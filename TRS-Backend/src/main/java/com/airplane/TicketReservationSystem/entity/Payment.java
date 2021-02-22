@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -17,4 +18,6 @@ public class Payment {
     private Reservation reservation;
 
     private boolean isPaid;
+
+    private Date createdDate;
 }

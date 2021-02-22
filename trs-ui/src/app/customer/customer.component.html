@@ -5,7 +5,8 @@
     <tr>
       <th>From-to</th>
       <th>Price</th>
-      <th>Departure Time</th>
+      <th>Departure Date | Time</th>
+      <th>Paid?</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -13,11 +14,11 @@
     <tr *ngFor="let reservation of reservations">
       <td>{{reservation["flightDetails"]["fromAirport"] + "-"  + reservation["flightDetails"]["toAirport"]}}</td>
       <td>{{reservation["flightDetails"]["price"]}}</td>
-      <td>{{reservation["flightDepartureTime"]["departureTime"]}}</td>
+      <td>{{reservation["reservationDate"] + " | " + reservation["flightDepartureTime"]["departureTime"]}}</td>
+      <td>{{reservation["paid"]}}</td>
       <td *ngIf="!reservation['paid']">
         <button class="btn btn-success" (click)="makePayment(reservation['id'])">Pay</button>
       </td>
     </tr>
   </tbody>
-
 </table>

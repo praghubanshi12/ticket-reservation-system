@@ -9,6 +9,7 @@ import {Customer} from "../customer/model/customer";
 import {CustomerService} from "../customer/service/customer.service";
 import {Router} from "@angular/router";
 import {FlightDepartureTime} from "../flight/model/flight-departure-time";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-reservation',
@@ -17,8 +18,8 @@ import {FlightDepartureTime} from "../flight/model/flight-departure-time";
 })
 export class ReservationComponent implements OnInit {
   flightDetails: Array<any> = [];
+  selectedDate: Date = new Date();
   selectedFlight: any = {};
-
   reservationForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router,
@@ -28,9 +29,9 @@ export class ReservationComponent implements OnInit {
 
   ngOnInit(): void {
     this.reservationForm = this.formBuilder.group({
-      flightDetails: [''],
-      date: [''],
-      flightDepartureTime: [1]
+      flightDetails: ['', Validators.required],
+      date: [formatDate(this.selectedDate, 'yyyy-MM-dd', 'en','+0545'), Validators.required],
+      flightDepartureTime: ['', Validators.required]
     });
     this.flightService.getAllFlightDetails().subscribe(res => {
       res.forEach((flight: any) => {
@@ -48,7 +49,6 @@ export class ReservationComponent implements OnInit {
         break;
       }
     }
-    var date = new Date();
   }
 
   onsubmit() {

@@ -25,6 +25,7 @@ public class Reservation {
     @JoinColumn(name="departure_time_id", referencedColumnName = "id")
     private FlightDepartureTime flightDepartureTime;
 
+    @Temporal(TemporalType.DATE)
     private Date reservationDate;
 
     private boolean isPaid;
@@ -32,5 +33,7 @@ public class Reservation {
     @OneToOne(mappedBy = "reservation")
     @JsonIgnore
     private Payment payment;
+
+    private Date createdDate;
 }
 

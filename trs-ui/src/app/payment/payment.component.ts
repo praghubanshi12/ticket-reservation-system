@@ -32,7 +32,7 @@ export class PaymentComponent implements OnInit {
     payment.reservation.id = reservationId;
     this.paymentService.makePayment(payment).subscribe(data=>{
       alert("Payment successful");
-      this.router.navigate(["reservation"]);
+      this.router.navigate(["customer/"+this.customerService.getLoggedInCustomerId()]);
     });
   }
 

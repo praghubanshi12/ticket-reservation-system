@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       window.sessionStorage.setItem('token', JSON.stringify(data));
       var token = this.userService.getToken();
       var role = token["trs_user_role"];
-      var navigateLink = (role.toUpperCase() == "ADMIN" ? [''] : ['customer/'+ token["trs_customer_id"]]);
+      var navigateLink = (role.toUpperCase() == "ADMIN" ? ['admin/dashboard'] : ['customer/'+ token["trs_customer_id"]]);
       this.router.navigate(navigateLink);
     }, error => {
       alert(error.error.error_description)

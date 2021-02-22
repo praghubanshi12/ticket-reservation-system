@@ -1,0 +1,4 @@
+<label for="date">Choose a Date: </label>
+<input id="date" class="form-control" (change)="onDateChange($event)" type = "date" [valueAsDate]="selectedDate" style="width:40%">
+<h1 style="margin-top: 50px" *ngIf="noRecordsFound">No reservation or payment found!</h1>
+<figure id="pie"></figure>

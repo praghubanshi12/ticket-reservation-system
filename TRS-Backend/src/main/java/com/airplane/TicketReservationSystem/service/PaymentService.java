@@ -7,15 +7,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
     public ResponseEntity<Object> save(Payment payment){
-        payment.setPaid(true);
-
         try {
+            payment.setPaid(true);
+            payment.setCreatedDate(new Date());
             paymentRepository.save(payment);
         } catch (Exception ex) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
