@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserService} from "../auth/service/user.service";
 import {HttpParams} from "@angular/common/http";
+import {CustomerService} from "../customer/service/customer.service";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   invalidLogin: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private customerService: CustomerService) {
   }
 
   onSubmit() {
@@ -26,14 +27,21 @@ export class LoginComponent implements OnInit {
       .set('password', this.loginForm.controls.password.value)
       .set('grant_type', 'password');
 
-    this.userService.login(body.toString()).subscribe(data => {
-      window.sessionStorage.setItem('token', JSON.stringify(data));
-      var token = this.userService.getToken();
-      var role = token["trs_user_role"];
-      var navigateLink = (role.toUpperCase() == "ADMIN" ? ['admin/dashboard'] : ['customer/'+ token["trs_customer_id"]]);
-      this.router.navigate(navigateLink);
+    this.userService.getOAuthToken(body.toString()).subscribe(data => {
+      console.log(data);
+      window.sessionStorage.setItem('token', data["access_token"]);
+      var role = data["role"];
+      window.sessionStorage.setItem('role', role);
+      if (role == "ROLE_ADMIN") this.router.navigate(["admin/dashboard"]);
+      if (role == "ROLE_CUSTOMER")
+        this.customerService.getLoggedInCustomerId().subscribe(data => {
+          var customerId = data["id"];
+          window.sessionStorage.setItem('customer-id', customerId);
+          this.router.navigate(["customer/" + customerId]);
+        });
     }, error => {
-      alert(error.error.error_description)
+      console.log(error)
+      alert(error)
     });
   }
 

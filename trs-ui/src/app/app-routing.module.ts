@@ -10,10 +10,10 @@ import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.compone
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: '', component:LoginComponent},
-  {path: 'customer/:id', component:CustomerComponent, canActivate: [AuthGuard], data:{role: "customer"}},
-  {path: 'reservation', component:ReservationComponent, canActivate: [AuthGuard], data:{role: "customer"}},
-  {path: 'payment/:reservationId', component:PaymentComponent, canActivate: [AuthGuard], data:{role: "customer"}},
-  {path: 'admin/dashboard', component:AdminDashboardComponent, canActivate: [AuthGuard], data:{role: "admin"}}
+  {path: 'customer/:id', component:CustomerComponent, canActivate: [AuthGuard], data:{role: "role_customer"}},
+  {path: 'reservation', component:ReservationComponent, canActivate: [AuthGuard], data:{role: "role_customer"}},
+  {path: 'payment/:reservationId', component:PaymentComponent, canActivate: [AuthGuard], data:{role: "role_customer"}},
+  {path: 'admin/dashboard', component:AdminDashboardComponent, canActivate: [AuthGuard], data:{role: "role_admin"}}
 ];
 
 @NgModule({

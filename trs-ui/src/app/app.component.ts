@@ -8,12 +8,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'trs-ui';
+  title = 'Ticket Reservation System';
 
   constructor(private router: Router) {
   }
   logout(){
-    window.sessionStorage.removeItem("token");
+    window.sessionStorage.clear();
     this.router.navigate(['login']);
   }
 }

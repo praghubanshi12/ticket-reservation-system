@@ -58,7 +58,7 @@ export class ReservationComponent implements OnInit {
     const reservation = new Reservation();
     reservation.reservationDate = this.reservationForm.controls.date.value;
     reservation.customer = new Customer();
-    reservation.customer!.id = this.customerService.getLoggedInCustomerId();
+    reservation.customer!.id = this.customerService.getCustomerIdFromSession();
     reservation.flightDetails = new FlightDetails();
     reservation.flightDetails!.id = this.reservationForm.controls.flightDetails.value;
     reservation.flightDepartureTime = new FlightDepartureTime();
@@ -74,7 +74,7 @@ export class ReservationComponent implements OnInit {
   }
 
   showCustomerReservations(){
-    this.router.navigate(['customer/'+ this.customerService.getLoggedInCustomerId()]);
+    this.router.navigate(['customer/'+ this.customerService.getCustomerIdFromSession()]);
   }
 
 }
