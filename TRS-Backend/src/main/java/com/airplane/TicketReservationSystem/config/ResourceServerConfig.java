@@ -12,19 +12,19 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 @Order
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
-    private static final String RESOURCE_ID = "resource_id";
-
-    @Override
+   @Override
     public void configure(ResourceServerSecurityConfigurer resources){
-        resources.resourceId(RESOURCE_ID).stateless(false);
+        resources.resourceId(AuthorizationServerConfig.RESOURCE_ID);
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.
-                anonymous().disable()
-                .authorizeRequests()
-                .antMatchers("/users/**").permitAll()
+        http
+                .requestMatchers().antMatchers("/trs", "/trs/**")
+                .and()
+                .requestMatchers().antMatchers("/admin", "/admin/**")
+                .and()
+                .authorizeRequests().anyRequest().access("#oauth2.hasScope('write')")
                 .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }
 }

@@ -1,19 +1,19 @@
 package com.airplane.TicketReservationSystem.controller;
 
-import com.airplane.TicketReservationSystem.entity.Customer;
-import com.airplane.TicketReservationSystem.repo.ReservationRepository;
 import com.airplane.TicketReservationSystem.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/dashboard")
+@RequestMapping("/admin/dashboard")
+@PreAuthorize("hasRole('ADMIN')")
+
 public class AdminDashboardController {
     @Autowired
     private DashboardService dashboardService;
